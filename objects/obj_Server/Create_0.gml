@@ -11,5 +11,6 @@ playerList[0] = {
 	steamID		: steamID,
 	steamName	: steamName,
 	character	: undefined,
-	startPos	: grab_spawn_point(0)
+	startPos	: grab_spawn_point(0),
+	lobbyMemberID: 0
 }
