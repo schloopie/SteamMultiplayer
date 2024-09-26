@@ -15,7 +15,7 @@ while(steam_net_packet_receive()){
 			sync_players(_playerList)
 			break
 		case NETWORK_PACKETS.SPAWN_OTHER:
-			var _layer = layer_get_id("Instances_1");
+			var _layer = layer_get_id("Instances");
 			var _x = buffer_read(inbuf, buffer_u16)
 			var _y = buffer_read(inbuf, buffer_u16)
 			var _steamID = buffer_read(inbuf, buffer_u64)
@@ -52,6 +52,10 @@ while(steam_net_packet_receive()){
 			
 		case NETWORK_PACKETS.SERVER_PLAYER_INPUT:
 			receive_player_input(inbuf)
+			break
+			
+		case NETWORK_PACKETS.PLAYER_POSITION:
+			update_player_position(inbuf)
 			break
 		
 		
